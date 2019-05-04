@@ -6,10 +6,10 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 Amplify.configure({
-  // Auth: {
-  //   identityPoolId: 'us-west-2:xxx-xxx-xxx-xxx-xxx',
-  //   region: 'us-west-2'
-  // },
+  Auth: {
+    identityPoolId: process.env.AuthIdentityPoolId,
+    region: process.env.AuthRegion
+  },
   Interactions: {
     bots: {
       "OrderFlowers": {

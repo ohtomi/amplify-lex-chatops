@@ -1,7 +1,7 @@
 import React from 'react';
-import Amplify, { Interactions } from 'aws-amplify';
+//import Amplify, { Interactions } from 'aws-amplify';
 import { ChatBot, AmplifyTheme } from 'aws-amplify-react';
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
 
 const myTheme = {
@@ -33,7 +33,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <h1>Amazon Lex Client</h1>
       </header>
       <ChatBot
           title="OrderFlowers Bot"
@@ -43,6 +43,7 @@ function App() {
           onComplete={handleComplete}
           clearOnComplete={true}
           conversationModeOn={false}
+          voiceEnabled={true}
           voiceConfig={customVoiceConfig}
       />
     </div>

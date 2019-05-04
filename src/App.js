@@ -1,24 +1,50 @@
 import React from 'react';
+import Amplify, { Interactions } from 'aws-amplify';
+import { ChatBot, AmplifyTheme } from 'aws-amplify-react';
 import logo from './logo.svg';
 import './App.css';
+
+const myTheme = {
+  ...AmplifyTheme,
+  sectionHeader: {
+    ...AmplifyTheme.sectionHeader,
+    backgroundColor: '#ff6600'
+  }
+};
+
+const customVoiceConfig = {
+  silenceDetectionConfig: {
+    time: 10000,
+    amplitude: 0.2
+  }
+};
+
+function handleComplete(err, confirmation) {
+  if (err) {
+    alert('Bot conversation failed')
+    return;
+  }
+
+  alert('Success: ' + JSON.stringify(confirmation, null, 2));
+  return 'Flowers ordered. Thank you! what would you like to do next?';
+}
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
+      <ChatBot
+          title="OrderFlowers Bot"
+          theme={myTheme}
+          botName="OrderFlowers"
+          welcomeMessage="Welcome, how can I help you today?"
+          onComplete={handleComplete}
+          clearOnComplete={true}
+          conversationModeOn={false}
+          voiceConfig={customVoiceConfig}
+      />
     </div>
   );
 }

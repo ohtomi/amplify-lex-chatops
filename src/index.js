@@ -1,8 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Amplify from 'aws-amplify';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+
+Amplify.configure({
+  // Auth: {
+  //   identityPoolId: 'us-west-2:xxx-xxx-xxx-xxx-xxx',
+  //   region: 'us-west-2'
+  // },
+  Interactions: {
+    bots: {
+      "BookTrip": {
+        "name": "OrderFlowers",
+        "alias": "$LATEST",
+        "region": "us-west-2",
+      },
+    }
+  }
+});
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

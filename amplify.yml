@@ -10,7 +10,7 @@ frontend:
   artifacts:
     baseDirectory: build
     files:
-      - 'build/**/*'
+      - '**/*'
   cache:
     paths:
       - node_modules/**/*

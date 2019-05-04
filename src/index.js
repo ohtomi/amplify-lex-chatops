@@ -14,7 +14,7 @@ Amplify.configure({
     bots: {
       "OrderFlowers": {
         "name": "OrderFlowers",
-        "alias": "$LATEST",
+        "alias": "Dev",
         "region": "us-west-2",
       },
     }

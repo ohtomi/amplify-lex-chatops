@@ -2,7 +2,7 @@ import React from 'react';
 //import Amplify, { Interactions } from 'aws-amplify';
 import { ChatBot, AmplifyTheme } from 'aws-amplify-react';
 //import logo from './logo.svg';
-import './App.css';
+//import './App.css';
 
 const myTheme = {
   ...AmplifyTheme,
@@ -25,9 +25,6 @@ function handleComplete(err, confirmation) {
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Amazon Lex Client</h1>
-      </header>
       <ChatBot
           title="OrderFlowers Bot"
           theme={myTheme}

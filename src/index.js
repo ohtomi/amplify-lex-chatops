@@ -12,7 +12,7 @@ Amplify.configure({
   // },
   Interactions: {
     bots: {
-      "BookTrip": {
+      "OrderFlowers": {
         "name": "OrderFlowers",
         "alias": "$LATEST",
         "region": "us-west-2",

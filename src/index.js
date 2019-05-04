@@ -7,8 +7,8 @@ import * as serviceWorker from './serviceWorker';
 
 Amplify.configure({
   Auth: {
-    identityPoolId: process.env.AuthIdentityPoolId,
-    region: process.env.AuthRegion
+    identityPoolId: process.env.REACT_APP_AUTH_IDENTITY_POOL_ID,
+    region: process.env.REACT_APP_AUTH_REGION
   },
   Interactions: {
     bots: {

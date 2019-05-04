@@ -12,13 +12,6 @@ const myTheme = {
   }
 };
 
-const customVoiceConfig = {
-  silenceDetectionConfig: {
-    time: 10000,
-    amplitude: 0.2
-  }
-};
-
 function handleComplete(err, confirmation) {
   if (err) {
     alert('Bot conversation failed')
@@ -42,9 +35,8 @@ function App() {
           welcomeMessage="Welcome, how can I help you today?"
           onComplete={handleComplete}
           clearOnComplete={true}
-          conversationModeOn={false}
+          conversationModeOn={true}
           voiceEnabled={true}
-          voiceConfig={customVoiceConfig}
       />
     </div>
   );
